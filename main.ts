@@ -12,9 +12,10 @@ renderSeriesInTable(dataSeries);
 
 
 
-const handleClick =(name:string)=>{
-  console.log(name)
-  renderInfo(name)
+const handleClick =(serie:Serie)=>{
+  
+
+  renderInfo(serie.name)
 }
 
 function renderSeriesInTable(series: Serie[]): void {
@@ -25,8 +26,14 @@ function renderSeriesInTable(series: Serie[]): void {
     trElement.innerHTML = `
                         <td>${serie.index}</td>
                         <td><div id='btn' class='p-0 m-0'> ${serie.name}</div></td>
-                        <td onClick={handleClick('nombre')}>${serie.channel}</td>
+                        <td >${serie.channel}</td>
                         <td>${serie.seasons}</td>`;
+                        
+    trElement.addEventListener('click', (e) =>{
+      handleClick(serie)
+      console.log(e.target)
+    })
+    
     
     seriesTbody.appendChild(trElement);
     
@@ -53,12 +60,8 @@ function getAverageOfSeasons(series: Serie[]): number {
 function renderInfo(serie:string):void {
   let infoElement= document.createElement("div")
   infoElement.innerHTML=`<div> ${serie} </div>
-                        <div> segundo </div>
                           `
   infoTbody.appendChild(infoElement)
 }
-let botonEscoger= document.getElementById("btn")!;
-botonEscoger.addEventListener('click', (e) =>{
-  handleClick('nombre')
-  console.log('click')
-})
+
+

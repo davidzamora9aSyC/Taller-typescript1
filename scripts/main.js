@@ -3,15 +3,18 @@ var seriesTbody = document.getElementById('series');
 var promedioTbody = document.getElementById('promedio');
 var infoTbody = document.getElementById('info');
 renderSeriesInTable(dataSeries);
-var handleClick = function (name) {
-    console.log(name);
-    renderInfo(name);
+var handleClick = function (serie) {
+    renderInfo(serie.name);
 };
 function renderSeriesInTable(series) {
     console.log('Desplegando series');
     series.forEach(function (serie) {
         var trElement = document.createElement("tr");
-        trElement.innerHTML = "\n                        <td>".concat(serie.index, "</td>\n                        <td><div id='btn' class='p-0 m-0'> ").concat(serie.name, "</div></td>\n                        <td onClick={handleClick('nombre')}>").concat(serie.channel, "</td>\n                        <td>").concat(serie.seasons, "</td>");
+        trElement.innerHTML = "\n                        <td>".concat(serie.index, "</td>\n                        <td><div id='btn' class='p-0 m-0'> ").concat(serie.name, "</div></td>\n                        <td >").concat(serie.channel, "</td>\n                        <td>").concat(serie.seasons, "</td>");
+        trElement.addEventListener('click', function (e) {
+            handleClick(serie);
+            console.log(e.target);
+        });
         seriesTbody.appendChild(trElement);
     });
     var promedioCalculado = document.createElement("tr");
@@ -30,11 +33,6 @@ function getAverageOfSeasons(series) {
 }
 function renderInfo(serie) {
     var infoElement = document.createElement("div");
-    infoElement.innerHTML = "<div> ".concat(serie, " </div>\n                        <div> segundo </div>\n                          ");
+    infoElement.innerHTML = "<div> ".concat(serie, " </div>\n                          ");
     infoTbody.appendChild(infoElement);
 }
-var botonEscoger = document.getElementById("btn");
-botonEscoger.addEventListener('click', function (e) {
-    handleClick('nombre');
-    console.log('click');
-});
