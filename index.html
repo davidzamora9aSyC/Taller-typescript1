@@ -10,26 +10,31 @@
 </head>
 <body>
     Taller 1 Typescript
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th> INDEX</th>
-                <th> Name </th>
-                <th> Channel </th>
-                <th> Seasons </th>
-            </tr>
-        </thead>
-        <tbody id="series">
-      
-        </tbody>
-    </table>
-    <div>
-        <div id="promedio">
-            El promedio de temporadas es:
-           
-        </div>
-        
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <table class="table table-bordered ">
+                    <thead class="table-dark">
+                        <tr>
+                            <th> INDEX</th>
+                            <th> Name </th>
+                            <th> Channel </th>
+                            <th> Seasons </th>
+                        </tr>
+                    </thead>
+                    <tbody id="series">
+                  
+                    </tbody>
+                </table>
+                <div>
+                    <div id="promedio">                     
+                    </div>                    
+                </div>             
+            </div>
+            <div class="col-6" id="info">
+                Segunda columna
+            </div>
+        </div>       
     </div>
     
 
@@ -39,6 +44,6 @@
     <script type="module" src="./scripts/series.js" ></script>
     <script type="module" src="./scripts/dataSeries.js" ></script>
     <script type="module" src="./scripts/main.js"></script>
-</body>
+
 </body>
 </html>
