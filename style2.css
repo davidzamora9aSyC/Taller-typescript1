@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'lovelo';
+    src: url(Fonts\Lovelo.otf);
+}
+
+
+.terminacionDeDominio{
+    color:#000000;
+
+    font-family: 'quicksand';    
+    font-size: 30px;
+}
+.titulo{
+    color:#ff7b0e;
+
+}
+
+.header{
+    background-color: #f4f4f4;
+}
+
+.redes{
+    height: 60px;
+    width:60px;
+}
+
+.bold {
+    font-weight: bold;
+  }
+.conBorde{
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.barra{
+    background-color: rgb(180, 16, 16);
+}
+
+
+.lateral{
+    width:30vw;
+    
+}
+
+.texto{
+    font-family: 'quicksand';
+}
+.light{
+    font-weight: lighter;
+}
+.centrado{
+    margin: auto;
+}
+
+.alto{
+    height: 100vw;
+}
+.letraBlanca{
+    color: #f4f4f4;
+}
+.conBordeLigero{
+    border:1px solid rgb(153, 143, 143);
+}

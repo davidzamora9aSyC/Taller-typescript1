@@ -14,8 +14,17 @@ renderSeriesInTable(dataSeries);
 
 const handleClick =(serie:Serie)=>{
   
+  clearInfo()
+  renderInfo(serie)
+}
 
-  renderInfo(serie.name)
+function clearInfo():void{
+  while (infoTbody.hasChildNodes()) {
+    if (infoTbody.firstChild != null) {
+      infoTbody.removeChild(infoTbody.firstChild);
+     
+    }
+  }
 }
 
 function renderSeriesInTable(series: Serie[]): void {
@@ -24,10 +33,11 @@ function renderSeriesInTable(series: Serie[]): void {
     let trElement = document.createElement("tr");
     
     trElement.innerHTML = `
-                        <td>${serie.index}</td>
-                        <td><div id='btn' class='p-0 m-0'> ${serie.name}</div></td>
-                        <td >${serie.channel}</td>
-                        <td>${serie.seasons}</td>`;
+                        
+                        <td class="texto light fs-5">${serie.index}</td>
+                        <td class="texto light fs-5"><div id='btn' class='p-0 m-0'> ${serie.name}</div></td>
+                        <td class="texto light fs-5">${serie.channel}</td>
+                        <td class="texto light fs-5">${serie.seasons}</td>`;
                         
     trElement.addEventListener('click', (e) =>{
       handleClick(serie)
@@ -57,9 +67,19 @@ function getAverageOfSeasons(series: Serie[]): number {
 
 
 
-function renderInfo(serie:string):void {
+function renderInfo(serie:Serie):void {
   let infoElement= document.createElement("div")
-  infoElement.innerHTML=`<div> ${serie} </div>
+  infoElement.innerHTML=`
+                        <div class="conBorde pt-0 mt-0 text-left mx-auto">
+                          
+                          <img class='img-fluid mb-3 mx-0 ' src="${serie.image}">
+                          <div class= 'mx-3 mb-5 '>
+                            <h1 class='bold'> ${serie.name} </h1>
+                            <div class="p-2  texto light fs-6"> ${serie.description} </div>
+                            <a href="${serie.link}"class='p-2'> ${serie.link} </a>
+                          </div>
+
+                        </div>
                           `
   infoTbody.appendChild(infoElement)
 }
