@@ -70,16 +70,14 @@ function getAverageOfSeasons(series: Serie[]): number {
 function renderInfo(serie:Serie):void {
   let infoElement= document.createElement("div")
   infoElement.innerHTML=`
-                        <div class="conBorde pt-0 mt-0 text-left mx-auto">
-                          
-                          <img class='img-fluid mb-3 mx-0 ' src="${serie.image}">
-                          <div class= 'mx-3 mb-5 '>
-                            <h1 class='bold'> ${serie.name} </h1>
-                            <div class="p-2  texto light fs-6"> ${serie.description} </div>
-                            <a href="${serie.link}"class='p-2'> ${serie.link} </a>
-                          </div>
-
-                        </div>
+  <div class="card mx-auto mx-lg-1" style="width: 18rem;">
+    <img class="card-img-top" src="${serie.image}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">${serie.name} title</h5>
+      <p class="card-text">${serie.description}</p>
+      <a href="${serie.link}">${serie.link}</a>
+    </div>
+  </div>
                           `
   infoTbody.appendChild(infoElement)
 }

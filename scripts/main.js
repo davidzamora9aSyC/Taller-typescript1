@@ -41,6 +41,6 @@ function getAverageOfSeasons(series) {
 }
 function renderInfo(serie) {
     var infoElement = document.createElement("div");
-    infoElement.innerHTML = "\n                        <div class=\"conBorde pt-0 mt-0 text-left mx-auto\">\n                          \n                          <img class='img-fluid mb-3 mx-0 ' src=\"".concat(serie.image, "\">\n                          <div class= 'mx-3 mb-5 '>\n                            <h1 class='bold'> ").concat(serie.name, " </h1>\n                            <div class=\"p-2  texto light fs-6\"> ").concat(serie.description, " </div>\n                            <a href=\"").concat(serie.link, "\"class='p-2'> ").concat(serie.link, " </a>\n                          </div>\n\n                        </div>\n                          ");
+    infoElement.innerHTML = "\n  <div class=\"card mx-auto mx-lg-1\" style=\"width: 18rem;\">\n    <img class=\"card-img-top\" src=\"".concat(serie.image, "\" alt=\"Card image cap\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">").concat(serie.name, " title</h5>\n      <p class=\"card-text\">").concat(serie.description, "</p>\n      <a href=\"").concat(serie.link, "\">").concat(serie.link, "</a>\n    </div>\n  </div>\n                          ");
     infoTbody.appendChild(infoElement);
 }
